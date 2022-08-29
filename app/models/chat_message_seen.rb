@@ -12,6 +12,6 @@ class ChatMessageSeen < ApplicationRecord
     msg.update(all_seen: true) if seenby_user_ids >= chat_user_ids
 
     # 12 Code for action cable to message Seen
-    CableNotifyChatJob.perform_async(12, msg.chat_id, msg.id, user_id)
+    CableNotifyChatJob.perform_now(12, msg.chat_id, msg.id, user_id)
   end
 end

@@ -33,8 +33,8 @@ class ChatMessage < ApplicationRecord
       removed_chat.chat_remove_logs.create(user_id: user_id, category: "recovered", description: "Chat Recovered by new message")
     end
 
-    # Params for perform_async => (code, chat_id, message_id, sender_id)
-    CableNotifyChatJob.perform_async(10, chat_id, id, user_id)
+    # Params for perform_now => (code, chat_id, message_id, sender_id)
+    CableNotifyChatJob.perform_now(10, chat_id, id, user_id)
   end
 
   def as_json(options = {})

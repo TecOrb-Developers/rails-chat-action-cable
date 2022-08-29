@@ -58,9 +58,9 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
     messages.each do |msg|
       msg.update(deleted: true)
       # code 11 for remove
-      # Params for perform_async => (code, chat_id, message_id, sender_id)
+      # Params for perform_now => (code, chat_id, message_id, sender_id)
 
-      CableNotifyChatJob.perform_async(11, msg.chat_id, msg.id, msg.user_id)
+      CableNotifyChatJob.perform_now(11, msg.chat_id, msg.id, msg.user_id)
     end
     build_response_view("custom_ok", "Messages unsend", {})
   end

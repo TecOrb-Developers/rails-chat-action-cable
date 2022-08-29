@@ -1,5 +1,6 @@
 class CableNotifyChatJob < ApplicationJob
   queue_as :default
+  sidekiq_options retry: false
 
   def perform(code, chat_id, message_id, sender_id)
     # All Action Cable Codes:
@@ -43,17 +44,17 @@ class CableNotifyChatJob < ApplicationJob
             dl.update(desc: "ActionCable")
             # p "Notifing sender that message delivered successfully"
             result[:data][:message].merge!(status: 1)
-            senderRoom = "notify_#{sender.id}"
+            sender_room = "notify_#{sender.id}"
             newData = {
               code: 14,
               data: result[:data]
             }
-            newResp = ActionCable.server.broadcast senderRoom, newData
+            newResp = ActionCable.server.broadcast sender_room, newData
             # p "Sender delivery notified"
             # p newResp
           end
         elsif code == 10
-          # CablePushMsgJob.perform_async(message.id, usr.id)
+          # CablePushMsgJob.perform_now(message.id, usr.id)
           # Message is not delivered, may be user is not connected to action cable
           # so we need to fire notification from push notification
         end
