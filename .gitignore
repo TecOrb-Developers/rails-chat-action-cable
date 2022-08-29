@@ -41,5 +41,4 @@ erd.pdf
 dump.rdb
 /config/configuration.yml
 /config/google_client_credentials.json
-/db/schema.rb
 rspec.output.txt
