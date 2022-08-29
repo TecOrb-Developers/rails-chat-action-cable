@@ -10,7 +10,7 @@ module ResponseJson
     case msg_code
     when "success"
       result = {code: 200, message: "Success"}
-    when "customOk"
+    when "custom_ok"
       result = {code: 200, message: entity}
     when "custom"
       result = {code: 422, message: entity}
@@ -34,13 +34,13 @@ module ResponseJson
       result = {code: 422, message: "#{entity} can't blank"}
     when "already"
       result = {code: 422, message: "#{entity} already exists"}
-    when "alreadyPaid"
+    when "already_paid"
       result = {code: 432, message: "Subscription already paid"}
-    when "sessionExpired"
+    when "session_expired"
       result = {code: 345, message: entity}
-    when "guestExpired"
+    when "guest_expired"
       result = {code: 123, message: entity}
-    when "customCode"
+    when "custom_code"
       result = {code: entity.to_s.split(':').first.to_i, message: entity.to_s.split(':').last}
     else
       result = {code: 420, message: "Unknown Request"}

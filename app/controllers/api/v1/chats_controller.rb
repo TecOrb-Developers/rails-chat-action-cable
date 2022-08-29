@@ -1,5 +1,6 @@
-class Api::V1::ChatsController < ApplicationController
-	before_action :validate_user_request
+class Api::V1::ChatsController < Api::V1::ApplicationController
+	# default :doorkeeper_authorize! is applied to check loggedin user access
+	before_action :check_logged_user
 
   def index
     # Conversation list, check comments in Chat model
@@ -15,7 +16,7 @@ class Api::V1::ChatsController < ApplicationController
 					methods: [:updated_at, :recent_message],
 					loggedin_user: @user.id
 				})
-    build_response_view("customOk", "Conversations list fetched", {chats: data})
+    build_response_view("custom_ok", "Conversations list fetched", {chats: data})
   end
 
   def delete
@@ -26,12 +27,12 @@ class Api::V1::ChatsController < ApplicationController
       chRemove.update(deleted: true)
       chRemove.chat_remove_logs.create(user_id: @user.id, description: "Chat removed")
     end
-    build_response_view("customOk", "Conversations deleted", {})
+    build_response_view("custom_ok", "Conversations deleted", {})
   end
 
   def removed
     chats = Chat.removed(@user.id)
     data = chats.as_json(only: [:id, :title])
-    build_response_view("customOk", "Removed conversations list", {chats: data})
+    build_response_view("custom_ok", "Removed conversations list", {chats: data})
   end
 end

@@ -23,10 +23,10 @@ if Doorkeeper::Application.count.zero?
 
 	# get apps credientials
 	# client_id of the application
-	Doorkeeper::Application.find_by(name: "Android client").uid
+	p Doorkeeper::Application.find_by(name: "iOS client").uid
 
 	# client_secret of the application
-	Doorkeeper::Application.find_by(name: "Android client").secret
+	p Doorkeeper::Application.find_by(name: "iOS client").secret
 
 end
 
