@@ -1,4 +1,6 @@
 class Api::V1::ChatMessagesController < Api::V1::ApplicationController
+  # default :doorkeeper_authorize! is applied to check loggedin user access
+  before_action :check_logged_user
   before_action :find_chat
 
   def create
@@ -92,8 +94,17 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
 
   def find_chat
     @chat = Chat.all_conversations(@user.id).distinct.find_by_id(params[:chat_id])
-    unless @chat
-      build_response_view("not", "Chat", {})
+    if !@chat
+      receiver = User.find_by_id(params[:receiver_id])
+      if receiver
+        @chat = @user.chat_with(receiver.id)
+        unless @chat
+          @chat = @user.chats.create(title: "single")
+          @chat.chat_users.create(user_id: receiver.id)
+        end
+      else
+        build_response_view("not", "Receiver", {})
+      end
     end
   end
 

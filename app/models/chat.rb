@@ -28,7 +28,7 @@ class Chat < ApplicationRecord
       .available
         .where.not("chats.id": removedCids)
           .distinct
-            .order("chats.lastMsgAt DESC")
+            .order("chats.last_msg_at DESC")
   }
 
   scope :all_conversations, ->(uid) {
@@ -40,7 +40,7 @@ class Chat < ApplicationRecord
     all_conversations(uid)
       .joins(:chat_removes)
         .distinct
-          .order("chats.lastMsgAt DESC")
+          .order("chats.last_msg_at DESC")
   }
 
   after_save :add_member
