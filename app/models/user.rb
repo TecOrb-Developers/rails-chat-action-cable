@@ -27,4 +27,21 @@ class User < ApplicationRecord
 	has_many :chat_removes, dependent: :destroy
 	has_many :chat_remove_logs, dependent: :destroy
 
+	def conversations
+		Chat.conversations(id)
+	end
+
+	def chat_with uid
+		# After Trip Create we are finding the old conversation between host and guest to initiate chat
+		# At Trip after create callback
+		cids = Chat.all_conversations(id).pluck("chats.id")
+		Chat.joins(:chat_users).where("chats.id IN (?) and chat_users.user_id=?", cids, uid).first
+	end
+
+  def unseen_messages
+    available_cids = conversations.pluck("chats.id")
+    ChatMessage.available(id).where("chat_messages.user_id != ?", id)
+      .joins(:chat).where("chats.id IN (?)", available_cids)
+      	.where("chat_messages.all_seen=?", false).count
+  end
 end
