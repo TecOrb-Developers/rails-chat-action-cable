@@ -1,0 +1,937 @@
+{
+	"info": {
+		"_postman_id": "40926c3b-26e5-4208-9e34-0eada1f5ac63",
+		"name": "Chat-Module",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6521205"
+	},
+	"item": [
+		{
+			"name": "chats",
+			"item": [
+				{
+					"name": "messages",
+					"item": [
+						{
+							"name": "Send Message",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "receiver_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "Hello How are you?",
+											"description": "For text message only",
+											"type": "text"
+										},
+										{
+											"key": "doc_type",
+											"value": "",
+											"description": "For other messages only: \"image\", \"document\"",
+											"type": "text"
+										},
+										{
+											"key": "doc_url",
+											"value": "",
+											"description": "Uploaded document URL link (URL)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/create",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Messages list",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "deviceType",
+										"value": "android",
+										"description": "android / ios"
+									},
+									{
+										"key": "deviceToken",
+										"value": "000xxssdd009944lll333kddk445544"
+									},
+									{
+										"key": "accessToken",
+										"value": "qYYjA21DGJ2bD64rqGo6LQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n    \"page\": 1,\n    \"per_page\": 50\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/index",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"index"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Messages",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n    \"message_ids\": [3]\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/remove",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"remove"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unsend Messages (Remove from all)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n     \"message_ids\": [4]\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/unsend",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"unsend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Seen Message",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n    \"message_id\": 4\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/seen",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"seen"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deliver Message",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n    \"message_id\":3\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/deliver",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"deliver"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Conversations List",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Timezone",
+								"value": "Asia/Kolkata"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"page\": \"1\",\n     \"per_page\": \"10\"\n}"
+						},
+						"url": {
+							"raw": "{{carRent}}/v1/chats/index",
+							"host": [
+								"{{carRent}}"
+							],
+							"path": [
+								"v1",
+								"chats",
+								"index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Conversations",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Timezone",
+								"value": "Asia/Kolkata"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"chat_ids\": [37]\n}"
+						},
+						"url": {
+							"raw": "{{carRent}}/v1/chats/remove",
+							"host": [
+								"{{carRent}}"
+							],
+							"path": [
+								"v1",
+								"chats",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Removed Conversations",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Timezone",
+								"value": "Asia/Kolkata"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"page\": \"1\",\n     \"per_page\": \"10\"\n}"
+						},
+						"url": {
+							"raw": "{{carRent}}/v1/chats/removed",
+							"host": [
+								"{{carRent}}"
+							],
+							"path": [
+								"v1",
+								"chats",
+								"removed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auths",
+			"item": [
+				{
+					"name": "Registrations",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2MzgxOTI0MzYsImp0aSI6IjMxYjNiMjcwLTY4ZTAtNDlkZC05NWJmLTQ0MzU4MzEyMDk2NyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.-HJkLys8CRx_IXudsFKuHxyoRNpm9cpOmwrgmOj7gzGxcDu02gLFB-jh3Pfa8dRPoTNMQ8CErMuvPl_s04Rw4A",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jai@tecorb.co\",\n    \"password\": \"123456\",\n    \"fname\": \"Jai\",\n    \"lname\": \"Rajput\",\n    \"country_code\": \"+91\",\n    \"mobile_number\": \"7834821711\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bnpl}}/api/v1/registrations",
+							"host": [
+								"{{bnpl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registrations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Registrations",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2MzgxOTI0MzYsImp0aSI6IjMxYjNiMjcwLTY4ZTAtNDlkZC05NWJmLTQ0MzU4MzEyMDk2NyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.-HJkLys8CRx_IXudsFKuHxyoRNpm9cpOmwrgmOj7gzGxcDu02gLFB-jh3Pfa8dRPoTNMQ8CErMuvPl_s04Rw4A",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"jai@tecorb.co\",\n    \"password\": \"123456\",\n    \"fname\": \"Jai\",\n    \"lname\": \"Rajput\",\n    \"country_code\": \"+91\",\n    \"mobile_number\": \"7834821711\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{bnpl}}/api/v1/registrations",
+									"host": [
+										"{{bnpl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registrations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "8b9edb52-3625-4a96-aa8c-c3bd158c3c5c"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.276828"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "6ihjs08a11ggxgrkz2fk,mz8ns6bntwpl6kecvw36,nnj04aasna6rad6149dl,ri86skqnju4k3myiksfl,q7apx8th7qtxbcsobq8v,yvxgqdg1148jvnngcjnu,p9c76sbe0jwcr35voe8k,gsmusyhgasuzsh3jdd24,brf6tjx73civawoam4rl,rvp767mn08tgb8r2f77h"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 422,\n    \"message\": \"Signup failed\",\n    \"errors\": [\n        \"Mobile number has already been taken\",\n        \"Email has already been taken\"\n    ],\n    \"status\": \"unprocessable_entity\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"password\",\n    \"email\": \"jai@tecorb.co\",\n    \"password\": \"123456\",\n    \"client_id\": \"uZmSxDz1zznGyVGG_2mh6jcnoZYIcGqnqC-CJm6HKiU\",\n    \"client_secret\": \"absxyMmgaQWD1WGTN11wocbPQXbjNAVbT_J__b19Nvk\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bnpl}}/oauth/token",
+							"host": [
+								"{{bnpl}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"grant_type\": \"password\",\n    \"email\": \"jai@tecorb.co\",\n    \"password\": \"123456\",\n    \"client_id\": \"uZmSxDz1zznGyVGG_2mh6jcnoZYIcGqnqC-CJm6HKiU\",\n    \"client_secret\": \"absxyMmgaQWD1WGTN11wocbPQXbjNAVbT_J__b19Nvk\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{bnpl}}/oauth/token",
+									"host": [
+										"{{bnpl}}"
+									],
+									"path": [
+										"oauth",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "321adee1-bf4b-46d9-aa6a-6aa2083bab21"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.390660"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "5r9n0e5gg1720rckh6p4,mz8ns6bntwpl6kecvw36,nnj04aasna6rad6149dl,ri86skqnju4k3myiksfl,q7apx8th7qtxbcsobq8v,yvxgqdg1148jvnngcjnu,p9c76sbe0jwcr35voe8k,gsmusyhgasuzsh3jdd24,brf6tjx73civawoam4rl,rvp767mn08tgb8r2f77h,6ihjs08a11ggxgrkz2fk,gxwp2y47syahckcibwg8"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 7199,\n    \"refresh_token\": \"0ZDFKpDbn-jPFI8bNH5z5PFP9wi0NKoSkRloIjqMSEA\",\n    \"created_at\": 1661772994\n}"
+						}
+					]
+				},
+				{
+					"name": "Use Refresh token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"VvG8SSa-88b6AJorzMIJ7r0opASq-6uo_Z8uVwyV2G4\",\n    \"client_id\": \"4erZzUmrGUBrlHaVFPkMggywB8EhSpN78Y_3f3EvX7A\",\n    \"client_secret\": \"pCau4DvNvWuMJS3p3awp3C76eyEYHNtvpGiH9YzK8D4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bnpl}}/oauth/token",
+							"host": [
+								"{{bnpl}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2MzgxODkzNDcsImp0aSI6IjVmNzU3MGZjLTc5MGEtNDI5MC1iNjc1LWM5NmNhNDI1MDFiNSIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.0qKdXDxa71WBhnbNuXwSd_BQuad9rEGEgCzszQBWmtpKIniv868LDMcDZhht8m_f_vOiHUmFWqbnUKGDM17tXQ\",\n    \"client_id\": \"4erZzUmrGUBrlHaVFPkMggywB8EhSpN78Y_3f3EvX7A\",\n    \"client_secret\": \"pCau4DvNvWuMJS3p3awp3C76eyEYHNtvpGiH9YzK8D4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bnpl}}/oauth/revoke",
+							"host": [
+								"{{bnpl}}"
+							],
+							"path": [
+								"oauth",
+								"revoke"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
