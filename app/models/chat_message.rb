@@ -34,7 +34,7 @@ class ChatMessage < ApplicationRecord
     end
 
     # Params for perform_async => (code, chat_id, message_id, sender_id)
-    CableNotifyChatWorker.perform_async(10, chat_id, id, user_id)
+    CableNotifyChatJob.perform_async(10, chat_id, id, user_id)
   end
 
   def as_json(options = {})

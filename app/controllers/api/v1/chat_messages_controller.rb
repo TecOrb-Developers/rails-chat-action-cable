@@ -60,7 +60,7 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
       # code 11 for remove
       # Params for perform_async => (code, chat_id, message_id, sender_id)
 
-      CableNotifyChatWorker.perform_async(11, msg.chat_id, msg.id, msg.user_id)
+      CableNotifyChatJob.perform_async(11, msg.chat_id, msg.id, msg.user_id)
     end
     build_response_view("custom_ok", "Messages unsend", {})
   end
