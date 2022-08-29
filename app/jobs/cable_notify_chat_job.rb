@@ -8,8 +8,6 @@ class CableNotifyChatJob < ApplicationJob
     # 11: Remove Message,
     # 12: Seen Message,
     # 14: Delivered Message
-    # 15: Checkout Payment Link
-    # 16: Checkout payment successful
     chat = Chat.find_by_id(chat_id)
     message = chat ? chat.chat_messages.where(id: message_id).first : nil
     sender = User.find_by_id(sender_id)
