@@ -18,9 +18,9 @@ class Api::V1::ChatMessagesController < ApplicationController
     end
     if @msg
       data = @msg.as_json(chat_message_json)
-      sendResponse("customOk", "Message sent", {message: data})
+      build_response_view("customOk", "Message sent", {message: data})
     else
-      sendResponse("not", "Message", {})
+      build_response_view("not", "Message", {})
     end
   end
 
@@ -39,7 +39,7 @@ class Api::V1::ChatMessagesController < ApplicationController
       @user.chat_delivered_messages.where(chat_message_id: mid).first_or_create
     end
     data = messages.as_json(chat_message_json)
-    sendResponse("customOk", "Messages", {messages: data})
+    build_response_view("customOk", "Messages", {messages: data})
   end
 
   def delete
@@ -48,7 +48,7 @@ class Api::V1::ChatMessagesController < ApplicationController
     messages.each do |msg|
       @user.chat_deleted_messages.where(chat_message_id: msg.id).first_or_create
     end
-    sendResponse("customOk", "Messages deleted", {})
+    build_response_view("customOk", "Messages deleted", {})
   end
 
   def unsend
@@ -61,7 +61,7 @@ class Api::V1::ChatMessagesController < ApplicationController
 
       CableNotifyChatWorker.perform_async(11, msg.chat_id, msg.id, msg.user_id)
     end
-    sendResponse("customOk", "Messages unsend", {})
+    build_response_view("customOk", "Messages unsend", {})
   end
 
   def seen
@@ -71,9 +71,9 @@ class Api::V1::ChatMessagesController < ApplicationController
       # Action cable broadcast will be send from the ChatMessageSeen Model
       # from after_save callback
       data = @msg.as_json(chat_message_json)
-      sendResponse("customOk", "Messages seen", {message: data})
+      build_response_view("customOk", "Messages seen", {message: data})
     else
-      sendResponse("not", "Message", {})
+      build_response_view("not", "Message", {})
     end
   end
 
@@ -83,9 +83,9 @@ class Api::V1::ChatMessagesController < ApplicationController
     if @msg
       @msg.chat_delivered_messages.where(user_id: @user.id).first_or_create
       data = @msg.as_json(chat_message_json)
-      sendResponse("customOk", "Messages delivered", {message: data})
+      build_response_view("customOk", "Messages delivered", {message: data})
     else
-      sendResponse("not", "Message", {})
+      build_response_view("not", "Message", {})
     end
   end
 
@@ -94,7 +94,7 @@ class Api::V1::ChatMessagesController < ApplicationController
   def find_chat
     @chat = Chat.all_conversations(@user.id).distinct.find_by_id(params[:chat_id])
     unless @chat
-      sendResponse("not", "Chat", {})
+      build_response_view("not", "Chat", {})
     end
   end
 

@@ -1,13 +1,13 @@
 module ResponseJson
 
-  def sendResponse code,entity,resultjson
+  def build_response_view code,entity,resultjson
     respond_to do |format|
-      format.json { render :json => msgJson(code,entity).merge(resultjson) }         
+      format.json { render :json => msg_json(code,entity).merge(resultjson) }         
     end 
   end
 
-	def msgJson msgCode,entity
-    case msgCode
+	def msg_json msg_code,entity
+    case msg_code
     when "success"
       result = {code: 200, message: "Success"}
     when "customOk"
