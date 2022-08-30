@@ -20,13 +20,7 @@ class Api::V1::ChatsController < Api::V1::ApplicationController
   end
 
   def delete
-    chats = @user.conversations.where(id: params[:chat_ids])
-    # For help in chat_removes check comments in Chat model
-    chats.each do |chat|
-      chRemove = @user.chat_removes.where(chat_id: chat.id).first_or_create
-      chRemove.update(deleted: true)
-      chRemove.chat_remove_logs.create(user_id: @user.id, description: "Chat removed")
-    end
+    Chats::Delete.call(@user, params[:chat_ids])
     build_response_view("custom_ok", "Conversations deleted", {})
   end
 

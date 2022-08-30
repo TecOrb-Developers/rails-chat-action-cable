@@ -14,7 +14,7 @@ class ChatMessage < ApplicationRecord
       .where("chat_deleted_messages.id is null or chat_deleted_messages.user_id!=?", uid)
   }
 
-  after_create :set_message
+  after_save :set_message
 
   def set_message
     # Message delivered for sender
