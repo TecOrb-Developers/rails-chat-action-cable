@@ -51,7 +51,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE4NTgxOTMsImp0aSI6ImE5NzBlZWE3LTMzOWMtNDc1Yy04MDlmLTQxNWQwMjkyNDBjZCIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.3AK0ctgEhGLw94FndIqtc_cj5l_OOMyqnK7ayi5cvjuMsilytbZh788NqpxWNq8hIEN_qgNFyBIzeGJ32kLIBA",
 										"type": "text"
 									}
 								],
@@ -60,12 +60,12 @@
 									"formdata": [
 										{
 											"key": "receiver_id",
-											"value": "2",
+											"value": "3",
 											"type": "text"
 										},
 										{
 											"key": "message",
-											"value": "Hello How are you?",
+											"value": "Call me back when online.",
 											"description": "For text message only",
 											"type": "text"
 										},
@@ -96,7 +96,136 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Send Message",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Timezone",
+												"value": "Asia/Kolkata"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE4NTgxOTMsImp0aSI6ImE5NzBlZWE3LTMzOWMtNDc1Yy04MDlmLTQxNWQwMjkyNDBjZCIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.3AK0ctgEhGLw94FndIqtc_cj5l_OOMyqnK7ayi5cvjuMsilytbZh788NqpxWNq8hIEN_qgNFyBIzeGJ32kLIBA",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "receiver_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "message",
+													"value": "Hello are you there?",
+													"description": "For text message only",
+													"type": "text"
+												},
+												{
+													"key": "doc_type",
+													"value": "",
+													"description": "For other messages only: \"image\", \"document\"",
+													"type": "text"
+												},
+												{
+													"key": "doc_url",
+													"value": "",
+													"description": "Uploaded document URL link (URL)",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{carRent}}/v1/chats/messages/create",
+											"host": [
+												"{{carRent}}"
+											],
+											"path": [
+												"v1",
+												"chats",
+												"messages",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, private, max-age=0"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "06beeb16-2c60-4cf5-a28f-9534d72b927f"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.381227"
+										},
+										{
+											"key": "X-MiniProfiler-Original-Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-MiniProfiler-Ids",
+											"value": "sc9p0r2lk18ewc7dc5w1,jxjq5heo7nm5hwg42rgk,19dsanzxba8c31q1v4vk,z1fts0d0kgfpi58t1isk,vxhshkh72mhugazjhm44,4fqp76r1zxnjm7pz26ry,lgmflkq1fyx3s8h4u230,m1w92jp9yygz61qj55o1,7jve881bcfgsi4zg1t3w,s3znegisvb9d9b1nf861,mz8ns6bntwpl6kecvw36,nnj04aasna6rad6149dl,ri86skqnju4k3myiksfl,q7apx8th7qtxbcsobq8v,yvxgqdg1148jvnngcjnu,p9c76sbe0jwcr35voe8k,gsmusyhgasuzsh3jdd24,brf6tjx73civawoam4rl,rvp767mn08tgb8r2f77h,6ihjs08a11ggxgrkz2fk"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": {\n        \"id\": 9,\n        \"user_id\": 1,\n        \"content\": \"Hello are you there?\",\n        \"doc_url\": \"\",\n        \"doc_type\": \"\",\n        \"deleted\": false,\n        \"latitude\": null,\n        \"longitude\": null,\n        \"created_at\": \"2022-08-30T11:30:40.089Z\",\n        \"status\": 0\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "Messages list",
@@ -136,17 +265,8 @@
 										"value": "Asia/Kolkata"
 									},
 									{
-										"key": "deviceType",
-										"value": "android",
-										"description": "android / ios"
-									},
-									{
-										"key": "deviceToken",
-										"value": "000xxssdd009944lll333kddk445544"
-									},
-									{
-										"key": "accessToken",
-										"value": "qYYjA21DGJ2bD64rqGo6LQ",
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
 										"type": "text"
 									}
 								],
@@ -208,13 +328,13 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE4NTgxOTMsImp0aSI6ImE5NzBlZWE3LTMzOWMtNDc1Yy04MDlmLTQxNWQwMjkyNDBjZCIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.3AK0ctgEhGLw94FndIqtc_cj5l_OOMyqnK7ayi5cvjuMsilytbZh788NqpxWNq8hIEN_qgNFyBIzeGJ32kLIBA",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"chat_id\": 1,\n    \"message_ids\": [3]\n}"
+									"raw": "{\n    \"chat_id\": 1,\n    \"message_ids\": [9]\n}"
 								},
 								"url": {
 									"raw": "{{carRent}}/v1/chats/messages/remove",
@@ -270,13 +390,13 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE4NTgxOTMsImp0aSI6ImE5NzBlZWE3LTMzOWMtNDc1Yy04MDlmLTQxNWQwMjkyNDBjZCIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.3AK0ctgEhGLw94FndIqtc_cj5l_OOMyqnK7ayi5cvjuMsilytbZh788NqpxWNq8hIEN_qgNFyBIzeGJ32kLIBA",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"chat_id\": 1,\n     \"message_ids\": [4]\n}"
+									"raw": "{\n    \"chat_id\": 1,\n     \"message_ids\": [8]\n}"
 								},
 								"url": {
 									"raw": "{{carRent}}/v1/chats/messages/unsend",
@@ -460,9 +580,8 @@
 								"value": "Asia/Kolkata"
 							},
 							{
-								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE4NTgxOTMsImp0aSI6ImE5NzBlZWE3LTMzOWMtNDc1Yy04MDlmLTQxNWQwMjkyNDBjZCIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.3AK0ctgEhGLw94FndIqtc_cj5l_OOMyqnK7ayi5cvjuMsilytbZh788NqpxWNq8hIEN_qgNFyBIzeGJ32kLIBA",
 								"type": "text"
 							}
 						],
@@ -482,7 +601,111 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Conversations List",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE4NTgxOTMsImp0aSI6ImE5NzBlZWE3LTMzOWMtNDc1Yy04MDlmLTQxNWQwMjkyNDBjZCIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.3AK0ctgEhGLw94FndIqtc_cj5l_OOMyqnK7ayi5cvjuMsilytbZh788NqpxWNq8hIEN_qgNFyBIzeGJ32kLIBA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"page\": \"1\",\n     \"per_page\": \"10\"\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/index",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"index"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "ab69ec2b-0dc5-4a47-99a4-dfb943909549"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.215896"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "ivup5x2i2fcjcrcxkidb,896iy5akduye1f2u0z04,hzdgv9oys9k0gptj8v6w,kwk9jkidbio73u44jikx,c1pdk5ttyfl6nhrb5rtv,oj3k45w6vd07oln6lj2i,zq1uur49y6wztu6xs5sh,jytkxxba5cqzaklr97r4,9xsu89houqk72535iwoz,sc9p0r2lk18ewc7dc5w1,jxjq5heo7nm5hwg42rgk,19dsanzxba8c31q1v4vk,z1fts0d0kgfpi58t1isk,vxhshkh72mhugazjhm44,4fqp76r1zxnjm7pz26ry,lgmflkq1fyx3s8h4u230,m1w92jp9yygz61qj55o1,7jve881bcfgsi4zg1t3w,s3znegisvb9d9b1nf861,mz8ns6bntwpl6kecvw36"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Conversations list fetched\",\n    \"chats\": [\n        {\n            \"id\": 2,\n            \"title\": \"single\",\n            \"updated_at\": \"2022-08-30T11:58:48.535Z\",\n            \"recent_message\": {\n                \"id\": 11,\n                \"user_id\": 1,\n                \"content\": \"Call me back when online.\",\n                \"deleted\": false,\n                \"created_at\": \"2022-08-30T11:58:48.535Z\",\n                \"seen\": false,\n                \"delivered\": false\n            },\n            \"users\": [\n                {\n                    \"id\": 1,\n                    \"fname\": \"Jai\",\n                    \"lname\": \"Rajput\",\n                    \"country_code\": \"+91\",\n                    \"mobile_number\": \"7834821711\"\n                },\n                {\n                    \"id\": 3,\n                    \"fname\": \"Priya\",\n                    \"lname\": \"Chauhan\",\n                    \"country_code\": \"+91\",\n                    \"mobile_number\": \"9910781149\"\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"title\": \"single\",\n            \"updated_at\": \"2022-08-30T11:30:07.899Z\",\n            \"recent_message\": {\n                \"id\": 8,\n                \"user_id\": 1,\n                \"deleted\": true,\n                \"all_seen\": false,\n                \"latitude\": null,\n                \"longitude\": null,\n                \"created_at\": \"2022-08-30T11:30:07.899Z\",\n                \"status\": 0,\n                \"content\": null,\n                \"doc_type\": null,\n                \"doc_url\": null\n            },\n            \"users\": [\n                {\n                    \"id\": 1,\n                    \"fname\": \"Jai\",\n                    \"lname\": \"Rajput\",\n                    \"country_code\": \"+91\",\n                    \"mobile_number\": \"7834821711\"\n                },\n                {\n                    \"id\": 2,\n                    \"fname\": \"Priya\",\n                    \"lname\": \"Chauhan\",\n                    \"country_code\": \"+91\",\n                    \"mobile_number\": \"9910781147\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "Remove Conversations",
@@ -523,13 +746,13 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE3NzI5OTQsImp0aSI6ImQ5N2I0MzllLTJkMWQtNDNmYi05M2QzLTY5OGVkZDM5N2NlNyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.sq0blztKfrxLAaXFR-6ys0OETwNj9wIyJok2J6POSHQs87QjRFAdZJ_FmxNXFIyd5SzIpLEDf-MjACn9uDR6vw",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjE4NTgxOTMsImp0aSI6ImE5NzBlZWE3LTMzOWMtNDc1Yy04MDlmLTQxNWQwMjkyNDBjZCIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.3AK0ctgEhGLw94FndIqtc_cj5l_OOMyqnK7ayi5cvjuMsilytbZh788NqpxWNq8hIEN_qgNFyBIzeGJ32kLIBA",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n     \"chat_ids\": [37]\n}"
+							"raw": "{\n     \"chat_ids\": [2]\n}"
 						},
 						"url": {
 							"raw": "{{carRent}}/v1/chats/remove",

@@ -4,25 +4,25 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
   before_action :find_chat
 
   def create
-    # There will be two types of messages
-    if params[:message].present?
-      # Type 1. Normal Text message
-      @msg = @chat.chat_messages.create(content: params[:message], user_id: @user.id)
-    elsif params[:doc_type].present? and params[:doc_url].present?
-      # Type 2.1. Document Message (doc_type: image, pdf, doc etc)
-      # Type 2.2. Location Message (doc_type: location  {with: latitude, longitude})
-      @msg = if params[:doc_type] == "location" and params[:latitude].present? and params[:longitude].present?
-        @chat.chat_messages.create(doc_type: params[:doc_type], doc_url: params[:doc_url], latitude: params[:latitude], longitude: params[:longitude], user_id: @user.id)
-      else
-        @chat.chat_messages.create(doc_type: params[:doc_type], doc_url: params[:doc_url], user_id: @user.id)
-      end
-    end
+    @msg = ChatMessages::Create.call(@chat, @user, params)
     if @msg
       data = @msg.as_json(chat_message_json)
       build_response_view("custom_ok", "Message sent", {message: data})
     else
       build_response_view("not", "Message", {})
     end
+  end
+
+  def delete
+    # Message delete from loggedin user's list only. Receipients will able to see this
+    ChatMessages::Delete.call(@chat, @user, params[:message_ids])
+    build_response_view("custom_ok", "Messages deleted", {})
+  end
+
+  def unsend
+    # Message remove from all receipients and loggedin user.
+    ChatMessages::Remove.call(@chat, @user, params[:message_ids])
+    build_response_view("custom_ok", "Messages unsend", {})
   end
 
   def index
@@ -41,28 +41,6 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
     end
     data = messages.as_json(chat_message_json)
     build_response_view("custom_ok", "Messages", {messages: data})
-  end
-
-  def delete
-    # Message remove from only loggedin user
-    messages = @chat.messages(@user.id).where(id: params[:message_ids])
-    messages.each do |msg|
-      @user.chat_deleted_messages.where(chat_message_id: msg.id).first_or_create
-    end
-    build_response_view("custom_ok", "Messages deleted", {})
-  end
-
-  def unsend
-    # Message remove from all user's
-    messages = @chat.messages(@user.id).where(id: params[:message_ids])
-    messages.each do |msg|
-      msg.update(deleted: true)
-      # code 11 for remove
-      # Params for perform_now => (code, chat_id, message_id, sender_id)
-
-      CableNotifyChatJob.perform_now(11, msg.chat_id, msg.id, msg.user_id)
-    end
-    build_response_view("custom_ok", "Messages unsend", {})
   end
 
   def seen
@@ -97,11 +75,7 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
     if !@chat
       receiver = User.find_by_id(params[:receiver_id])
       if receiver
-        @chat = @user.chat_with(receiver.id)
-        unless @chat
-          @chat = @user.chats.create(title: "single")
-          @chat.chat_users.create(user_id: receiver.id)
-        end
+        @chat = Chats::Create.call(@user, receiver)
       else
         build_response_view("not", "Receiver", {})
       end
