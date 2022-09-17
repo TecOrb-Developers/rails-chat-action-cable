@@ -74,7 +74,8 @@ In this project we have implemented apis for
 - Conversations list
 - Remove Conversations in bulk
 - Send message
-- Remove messages in bulk
+- Remove messages in bulk (From loggedin user's list only, receipients will see the messages)
+- Delete Messages (From receipients as well)
 - Messages List
 - Mark Messages as seen/unseen
 - Message delivery/seen/unseen tracking
