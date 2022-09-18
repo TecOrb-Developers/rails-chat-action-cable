@@ -9,5 +9,6 @@ Serializers control the particular attributes rendered when an object or model i
 
 References: 
 - https://github.com/rails-api/active_model_serializers
+- https://github.com/rails-api/active_model_serializers/tree/0-10-stable/docs
 - https://www.educative.io/answers/what-are-serializers-in-ror
 - https://thoughtbot.com/blog/better-serialization-less-as-json

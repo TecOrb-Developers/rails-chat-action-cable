@@ -1,5 +1,6 @@
 class Api::V1::ChatMessagesController < Api::V1::ApplicationController
   # default :doorkeeper_authorize! is applied to check loggedin user access
+
   before_action :check_logged_user
   before_action :find_chat
 
@@ -28,7 +29,7 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
   def index
     # Chat's messages list for a User: Chat > messages (instance method)
     # Check Chat Model for more comments
-    messages = @chat.messages(@user.id).desc.paginate(page: params[:page], per_page: params[:per_page])
+    @messages = @chat.messages(@user.id).desc.paginate(page: params[:page], per_page: params[:per_page])
     # Seen all old unseed messages because complete chat is seeing now
     unseen = @chat.chat_messages.left_outer_joins(:chat_message_seens).where("chat_message_seens.id is null or (chat_message_seens.user_id != ?)", @user.id).pluck("chat_messages.id").uniq
     unseen.each do |mid|
@@ -39,8 +40,10 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
     undelivered.each do |mid|
       @user.chat_delivered_messages.where(chat_message_id: mid).first_or_create
     end
-    data = messages.as_json(chat_message_json)
-    build_response_view("custom_ok", "Messages", {messages: data})
+    # data = messages.as_json(chat_message_json)
+    # data = ChatMessageSerializer.new(@messages).serializable_hash
+    # build_response_view("custom_ok", "Messages", {messages: (@messages, each_serializer: RecordSummarySerializer)})
+    render json: @messages, each_serializer: ChatMessageSerializer, exclude: [:user_id]
   end
 
   def seen
