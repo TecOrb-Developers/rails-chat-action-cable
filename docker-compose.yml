@@ -1,0 +1,102 @@
+version: "3.9"
+
+x-app: &app
+  build:
+    context: .
+    args:
+      NODE_MAJOR: '16'
+  image: example-dev:1.0.0
+  environment: &env
+    NODE_ENV: ${NODE_ENV:-development}
+    RAILS_ENV: ${RAILS_ENV:-development}
+  tmpfs:
+    - /tmp
+    - /app/tmp/pids
+
+x-backend: &backend
+  <<: *app
+  stdin_open: true
+  tty: true
+  volumes:
+    - .:/app
+    - /bundle
+    - rails_cache:/app/tmp/cache
+    - history:/${HOME}/hist
+    - ./.bashrc:/${HOME}/.bashrc:ro
+  environment: &backend_environment
+    <<: *env
+    REDIS_URL: redis://redis:6379/
+    REDIS_URL_SIDEKIQ: redis://redis:6379/
+    ACTIONCABLE_BASE: 0.0.0.0:3000
+    DB_USER: root
+    DB_NAME: tecorb_chat
+    DB_PASSWORD: password
+    DB_HOST: db
+    BUNDLE_PATH: /bundle
+    WEBPACKER_DEV_SERVER_HOST: webpacker
+    MALLOC_ARENA_MAX: 2
+    WEB_CONCURRENCY: ${WEB_CONCURRENCY:-1}
+    BOOTSNAP_CACHE_DIR: /bundle/_bootsnap
+    XDG_DATA_HOME: /app/tmp/caches
+    YARN_CACHE_FOLDER: /app/node_modules/.yarn-cache
+    HISTFILE: /${HOME}/.bash_history
+    IRB_HISTFILE: /${HOME}/.irb_history
+    EDITOR: vi
+  depends_on: &backend_depends_on
+    db:
+      condition: service_started
+    redis:
+      condition: service_healthy
+
+services:
+  rails:
+    <<: *backend
+    command: bundle exec rails
+
+  web:
+    <<: *backend
+    command: bundle exec rails server -b 0.0.0.0
+    ports:
+      - '3000:3000'
+    depends_on:
+      sidekiq:
+        condition: service_started
+
+  sidekiq:
+    <<: *backend
+    command: bundle exec sidekiq -C config/sidekiq.yml
+
+  db:
+    image: "mysql:5.7"
+    platform: linux/x86_64
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_CHARACTER_SET_CLIENT: utf8mb4
+      MYSQL_CHARACTER_SET_CONNECTION: utf8mb4
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_CHARACTER_SET: utf8mb4
+      MYSQL_CHARACTER_SET_DATABASE: utf8mb4
+    volumes:
+      - db_data:/var/lib/mysql
+    command: ['mysqld', '--character-set-server=utf8mb4', '--user=root']
+
+  redis:
+    image: redis:6.2-alpine
+    volumes:
+      - redis:/data
+    ports:
+      - 6379
+    healthcheck:
+      test: redis-cli ping
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  bundle:
+  history:
+  rails_cache:
+  db_data:
+  redis:
