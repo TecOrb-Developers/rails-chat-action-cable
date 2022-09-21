@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  generateName: production-web-
+  labels:
+    app: production-web
+  name: production-web-7qq4z
+  namespace: default
+spec:
+  allocateLoadBalancerNodePorts: true
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http-to-rails
+    nodePort: 30977
+    port: 80
+    protocol: TCP
+    targetPort: 3000
+  - name: https-to-rails
+    nodePort: 32046
+    port: 443
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: production-web
+  sessionAffinity: None
+  type: LoadBalancer
+
