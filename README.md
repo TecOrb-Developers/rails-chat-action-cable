@@ -28,6 +28,12 @@ We are managing Action Cable notifications by their codes. Here are the codes to
 
 When any activity happen with respect to a message or a new message over the server, client will be notify by these code in Action Cable broadcast on their subscribed channel.
 
+## Postman collection is attached here
+We have documented all of these APIs using postman collections with their responses as well. Please download and import this in your postman to get direct endpoints access to the APIs with required body, headers etc.
+
+Here is the postman collection link
+https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/Chat-Module.postman_collection.json
+
 ## Technical assets and dependencies
 ###  User authentication is managed via doorkeeper JWT (JSON Web Token)
 Doorkeeper JWT adds JWT token support to the Doorkeeper OAuth library.
@@ -109,3 +115,12 @@ We have improved above module for the registration process and session managemen
 ## Action Cable Channel
 User need to subscribe a chat channel to get notify through action cable. Action Cable url will be send by server where the application is hosted followed by the /cable path. Channel name is initiated by a prefix 'notify_' and user's id. 
 To subscribe a channel user need to send their access token in 'session_token' key at the time of subscription request. Once user will be authenticated successfully, server will allow to subscribe the requested channel for the client.
+
+## Module wise documentation is attached in below links:
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/1.setup.md
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/2.environment_variable.md
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/3.action_cable_codes.md
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/4.APIs_doc.md
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/Chat-Module.postman_collection.json
+
