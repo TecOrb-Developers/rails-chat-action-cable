@@ -1,6 +1,5 @@
 class Api::V1::ChatMessagesController < Api::V1::ApplicationController
   # default :doorkeeper_authorize! is applied to check loggedin user access
-
   before_action :check_logged_user
   before_action :find_chat
 
@@ -40,9 +39,6 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
     undelivered.each do |mid|
       @user.chat_delivered_messages.where(chat_message_id: mid).first_or_create
     end
-    # data = messages.as_json(chat_message_json)
-    # data = ChatMessageSerializer.new(@messages).serializable_hash
-    # build_response_view("custom_ok", "Messages", {messages: (@messages, each_serializer: RecordSummarySerializer)})
     render json: @messages, each_serializer: ChatMessageSerializer, exclude: [:user_id]
   end
 
