@@ -1,6 +1,6 @@
 class Chats::ConversationsSerializer < ApplicationSerializer
   attributes :id, :title, :updated_at, :recent_message, :test
-  has_many :users
+  has_many :users, serializer: Chats::UsersSerializer
 
   def updated_at
     recent_message_at = last_message&.created_at
