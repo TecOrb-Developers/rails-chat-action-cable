@@ -28,7 +28,7 @@ class User < ApplicationRecord
 	has_many :chat_remove_logs, dependent: :destroy
 
 	# When your valdator class is named BlacklistValidator then in your model you use blacklist: true parameter.
-	validates :email, blacklist: true
+	validates :email, blacklist: true, no_yahoo_email: true
 
 	def conversations
 		Chat.conversations(id)

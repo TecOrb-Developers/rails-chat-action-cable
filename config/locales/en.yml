@@ -38,3 +38,4 @@ en:
           attributes:
             email:
               on_blacklist: "is blacklisted, please check with support team."
+              on_yahoo_email: "is a yahoo.com email address, please choose a different email."
