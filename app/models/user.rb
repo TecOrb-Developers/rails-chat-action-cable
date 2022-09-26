@@ -29,6 +29,8 @@ class User < ApplicationRecord
 
 	# When your valdator class is named BlacklistValidator then in your model you use blacklist: true parameter.
 	validates :email, blacklist: true, no_yahoo_email: true
+	validates :fname, number_not_allowed: true
+	validates :lname, number_not_allowed: true
 
 	def conversations
 		Chat.conversations(id)
