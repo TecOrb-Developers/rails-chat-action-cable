@@ -4,9 +4,8 @@ class Api::V1::ChatsController < Api::V1::ApplicationController
 
   def index
     # Conversation list, check comments in Chat model
-    data = @user.conversations
-      .paginate(page: params[:page], per_page: params[:per_page])
-    render json: data,scope: @user, status: :ok
+    data = @user.conversations.paginate(page: params[:page], per_page: params[:per_page])
+    render json: data, scope: @user, each_serializer: Chats::ConversationsSerializer
   end
 
   def delete
