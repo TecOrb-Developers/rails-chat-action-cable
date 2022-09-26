@@ -1,5 +1,5 @@
 class Chats::ConversationsSerializer < ApplicationSerializer
-  attributes :id, :title, :updated_at, :recent_message, :test
+  attributes :id, :title, :updated_at, :recent_message
   has_many :users, serializer: Chats::UsersSerializer
 
   def updated_at
@@ -10,10 +10,6 @@ class Chats::ConversationsSerializer < ApplicationSerializer
   def recent_message
     # ActiveModelSerializers::SerializableResource.new(last_message, serializer: ChatMessageSerializer).as_json
     last_message
-  end
-
-  def test
-    "ok"
   end
 
   private

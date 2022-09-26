@@ -15,6 +15,14 @@ class Api::V1::ApplicationController < ActionController::Base
 	end
 
 	def current_user
-		@user = User.find_by_id(doorkeeper_token.resource_owner_id) if doorkeeper_token
+		@user = User.find_by_id(doorkeeper_token.resource_owner_id).decorate if doorkeeper_token
+	end
+
+	def render_error(errors, status = :unprocessable_entity)
+		render json: { errors: errors, }, status: status
+	end
+
+	def render_success(message = "success", status = :ok)
+		render json: { message: message, }, status: status
 	end
 end

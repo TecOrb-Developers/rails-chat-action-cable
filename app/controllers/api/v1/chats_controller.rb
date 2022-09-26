@@ -4,18 +4,17 @@ class Api::V1::ChatsController < Api::V1::ApplicationController
 
   def index
     # Conversation list, check comments in Chat model
-    data = @user.conversations.paginate(page: params[:page], per_page: params[:per_page])
-    render json: data, scope: @user, each_serializer: Chats::ConversationsSerializer
+    chats = @user.conversations.paginate(page: params[:page], per_page: params[:per_page])
+    render json: chats, scope: @user, each_serializer: Chats::ConversationsSerializer
   end
 
   def delete
     Chats::Delete.call(@user, params[:chat_ids])
-    build_response_view("custom_ok", "Conversations deleted", {})
+    render_success
   end
 
   def removed
     chats = Chat.removed(@user.id)
-    data = chats.as_json(only: [:id, :title])
-    build_response_view("custom_ok", "Removed conversations list", {chats: data})
+    render json: chats, scope: @user, each_serializer: Chats::ConversationsSerializer
   end
 end
