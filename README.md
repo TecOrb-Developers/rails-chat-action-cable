@@ -27,7 +27,7 @@ Doorkeeper JWT adds JWT token support to the Doorkeeper OAuth library.
 
 ## Required variables to define in configuration.yml
 Here are the variables we need to define in this file:
-
+<code>
 DB_DEVELOPMENT: development_db_name
 
 DB_DEVELOPMENT_USERNAME: development_db_username
@@ -47,7 +47,7 @@ JWT_SECRET: jwt_secret_strong_xxxxxxxxxxxxxxxxxxxxxxx
 MYSQL_SOCKET: /tmp/mysql.sock
 
 ACTIONCABLE_BASE: https://your-frontend-application-endpoint
-
+</code>
 
 # Server-side configuration
 We are using Doorkeeper gem with JWT authentication to manage signup and login module.

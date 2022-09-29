@@ -55,17 +55,6 @@ class Chat < ApplicationRecord
     super(options)
   end
 
-  def updated_at
-    @msg ? @msg.created_at : created_at
-  end
-
-  # def recent_message
-  #   @msg.as_json({
-  #     only: [:id, :content, :docType, :created_at, :user_id, :deleted],
-  #     methods: [:seen, :delivered]
-  #   })
-  # end
-
   def messages uid
     # Case 1: When Chat is removed by the User
     #   > How Chat messages will be managed with Chat Removes for a User
