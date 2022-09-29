@@ -31,3 +31,16 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            fname: &repl 
+              on_number_detected: "should not include a number."
+            lname:
+              <<: *repl
+            email:
+              on_blacklist: "is blacklisted, please check with support team."
+              on_yahoo_email: "is a yahoo.com email address, please choose a different email."
+            
