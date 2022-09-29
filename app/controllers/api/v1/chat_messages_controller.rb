@@ -6,8 +6,8 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
   def create
     message = ChatMessages::Create.call(@chat, @user, params)
     if message[:status]
-      data = message[:data].as_json(chat_message_json)
-      build_response_view("custom_ok", "Message sent", {message: data})
+      data = message[:data].decorate
+      render json: data, serializer: Chats::MessagesSerializer
     else
       render_error message[:errors]
     end
@@ -16,13 +16,13 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
   def delete
     # Message delete from loggedin user's list only. Receipients will able to see this
     ChatMessages::Delete.call(@chat, @user, params[:message_ids])
-    build_response_view("custom_ok", "Messages deleted", {})
+    render_success
   end
 
   def unsend
     # Message remove from all receipients and loggedin user.
     ChatMessages::Remove.call(@chat, @user, params[:message_ids])
-    build_response_view("custom_ok", "Messages unsend", {})
+    render_success
   end
 
   def index
@@ -45,13 +45,12 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
   def seen
     @msg = @chat.messages(@user.id).find_by_id(params[:message_id])
     if @msg
-      @msg.chat_message_seens.where(user_id: @user.id).first_or_create
       # Action cable broadcast will be send from the ChatMessageSeen Model
       # from after_save callback
-      data = @msg.as_json(chat_message_json)
-      build_response_view("custom_ok", "Messages seen", {message: data})
+      @msg.chat_message_seens.where(user_id: @user.id).first_or_create
+      render json: @msg.decorate, serializer: Chats::MessagesSerializer
     else
-      build_response_view("not", "Message", {})
+      render_error "Message does not exists"
     end
   end
 
@@ -60,10 +59,9 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
     @msg = @chat.messages(@user.id).find_by_id(params[:message_id])
     if @msg
       @msg.chat_delivered_messages.where(user_id: @user.id).first_or_create
-      data = @msg.as_json(chat_message_json)
-      build_response_view("custom_ok", "Messages delivered", {message: data})
+      render json: @msg.decorate, serializer: Chats::MessagesSerializer
     else
-      build_response_view("not", "Message", {})
+      render_error "Message does not exists"
     end
   end
 
@@ -76,15 +74,8 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
       if receiver
         @chat = Chats::Create.call(@user, receiver)
       else
-        build_response_view("not", "Receiver", {})
+        render_error "Receiver does not exists"
       end
     end
-  end
-
-  def chat_message_json
-    {
-      only: [:id, :user_id, :content, :doc_url, :doc_type, :deleted, :latitude, :longitude, :created_at],
-      methods: [:status]
-    }
   end
 end

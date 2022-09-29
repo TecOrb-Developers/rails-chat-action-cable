@@ -24,13 +24,13 @@ class ChatMessage < ApplicationRecord
     # Message seen for sender
     chat_message_seens.where(user_id: user_id).first_or_create
 
-    cht = chat
+    chat_record = chat
     # Touch chat for recent chats sort
-    cht.update(last_msg_at: Time.current)
+    chat_record.update(last_msg_at: Time.current)
     # Recover receiver's deleted Chat conversations
-    cht.update(deleted: false)
-    uids = cht.chat_users.pluck(:user_id)
-    cht.chat_removes.where(user_id: uids, deleted: true).each do |removed_chat|
+    chat_record.update(deleted: false)
+    uids = chat_record.chat_users.pluck(:user_id)
+    chat_record.chat_removes.where(user_id: uids, deleted: true).each do |removed_chat|
       removed_chat.update(deleted: false)
       removed_chat.chat_remove_logs.create(user_id: user_id, category: "recovered", description: "Chat Recovered by new message")
     end
