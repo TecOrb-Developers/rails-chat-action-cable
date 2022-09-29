@@ -1,19 +1,14 @@
 class Chats::ConversationsSerializer < ApplicationSerializer
-  attributes :id, :title, :updated_at, :recent_message
-  has_many :users, serializer: Chats::UsersSerializer
-
-  def updated_at
-    recent_message_at = last_message&.created_at
-    recent_message_at.present? ? recent_message_at : object.created_at
-  end
+  attributes :id, :title, :updated_at, :recent_message, :members
+  # loggedin user can be accessable via scope. Passing scope from conversations list API
 
   def recent_message
-    # ActiveModelSerializers::SerializableResource.new(last_message, serializer: ChatMessageSerializer).as_json
-    last_message
+    ActiveModelSerializers::SerializableResource.new(object.recent_message, serializer: Chats::MessagesSerializer, adapter: :attributes).as_json if object.recent_message
   end
 
-  private
-  def last_message
-    object.chat_messages.available(scope&.id).desc.first
+  def members
+    members_data = object.users.decorate
+    ActiveModelSerializers::SerializableResource.new(members_data, each_serializer: Chats::UsersSerializer, adapter: :attributes).as_json
   end
+
 end

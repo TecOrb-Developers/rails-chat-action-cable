@@ -3,8 +3,11 @@ class Api::V1::ChatsController < Api::V1::ApplicationController
 	before_action :check_logged_user
 
   def index
-    # Conversation list, check comments in Chat model
-    chats = @user.conversations.paginate(page: params[:page], per_page: params[:per_page])
+    # Conversation list, check comments in Chat model for more details
+    # Below context is used to decorate the active records. We can pass values to decorators via context.
+    # Here we are passing loggedin user to query over conversations (to isolate deleted conversations)
+    chats = @user.conversations.paginate(page: params[:page], per_page: params[:per_page]).decorate(context: @user.id)
+    # Below additional parameter is sending i.e. scope. We can pass values to serializer via scope
     render json: chats, scope: @user, each_serializer: Chats::ConversationsSerializer
   end
 
@@ -14,7 +17,7 @@ class Api::V1::ChatsController < Api::V1::ApplicationController
   end
 
   def removed
-    chats = Chat.removed(@user.id)
-    render json: chats, scope: @user, each_serializer: Chats::ConversationsSerializer
+    chats = Chat.removed(@user.id).decorate(context: @user.id)
+    render json: chats, each_serializer: Chats::ConversationsSerializer
   end
 end

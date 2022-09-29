@@ -1,18 +1,20 @@
 class ChatDecorator < Draper::Decorator
   delegate_all
-
-  # Define presentation-specific methods here. Helpers are accessed through
-  # `helpers` (aka `h`). You can override attributes, for example:
-  #
-  #   def created_at
-  #     helpers.content_tag :span, class: 'time' do
-  #       object.created_at.strftime("%a %m/%d/%y")
-  #     end
-  #   end
+  # rails generate decorator Chat
 
   def updated_at
-    msg = chat_messages.available(context.user_id).desc.first
-    msg ? @msg.created_at : created_at
+    msg = last_message
+    msg ? msg.created_at : created_at
+  end
+
+  def recent_message
+    last_message
+  end
+
+  private
+
+  def last_message
+    msg = chat_messages.available(context).desc.first
   end
 
 end

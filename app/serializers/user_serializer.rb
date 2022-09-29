@@ -1,3 +1,3 @@
 class UserSerializer < ApplicationSerializer
-  attributes :id, :fname, :lname, :mobile_number, :country_code
+  attributes :id, :full_name, :contact_number, :joined_at
 end
