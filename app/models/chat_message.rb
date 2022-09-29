@@ -5,6 +5,8 @@ class ChatMessage < ApplicationRecord
   has_many :chat_deleted_messages, dependent: :destroy
   has_many :chat_delivered_messages, dependent: :destroy
 
+  validates :content, blacklisted_words: true
+
   scope :desc, -> { order("chat_messages.created_at DESC") }
   scope :asc, -> { order("chat_messages.created_at ASC") }
   # Chat's messages list for a User: Chat > messages (instance method)

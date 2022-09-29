@@ -9,7 +9,7 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
       data = @msg.as_json(chat_message_json)
       build_response_view("custom_ok", "Message sent", {message: data})
     else
-      build_response_view("not", "Message", {})
+      render_error "Invalid message content"
     end
   end
 

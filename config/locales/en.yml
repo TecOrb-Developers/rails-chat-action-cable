@@ -41,6 +41,10 @@ en:
             lname:
               <<: *repl
             email:
-              on_blacklist: "is blacklisted, please check with support team."
-              on_yahoo_email: "is a yahoo.com email address, please choose a different email."
+              blacklisted_email: "is blacklisted, please check with support team."
+              blacklisted_domain: "is a yahoo.com email address, please choose a different email."
+        chat_message:
+          attributes:
+            content:
+              blacklisted_word: "word is not allowed on this application"
             
