@@ -18,6 +18,10 @@ class ChatMessages::Create < ApplicationService
   end
 
   def call
-    @msg.save ? @msg : nil
+    { 
+      status: @msg.save , 
+      data: @msg,
+      errors: @msg.errors.full_messages
+    }
   end
 end

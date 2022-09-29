@@ -42,9 +42,9 @@ en:
               <<: *repl
             email:
               blacklisted_email: "is blacklisted, please check with support team."
-              blacklisted_domain: "is a yahoo.com email address, please choose a different email."
+              blacklisted_domain: "is using a blacklisted domain, please choose a different email."
         chat_message:
           attributes:
             content:
-              blacklisted_word: "word is not allowed on this application"
+              blacklisted_word: "includes blacklisted words which are not allowed on this application"
             

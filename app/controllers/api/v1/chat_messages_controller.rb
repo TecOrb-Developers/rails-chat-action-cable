@@ -4,12 +4,12 @@ class Api::V1::ChatMessagesController < Api::V1::ApplicationController
   before_action :find_chat
 
   def create
-    @msg = ChatMessages::Create.call(@chat, @user, params)
-    if @msg
-      data = @msg.as_json(chat_message_json)
+    message = ChatMessages::Create.call(@chat, @user, params)
+    if message[:status]
+      data = message[:data].as_json(chat_message_json)
       build_response_view("custom_ok", "Message sent", {message: data})
     else
-      render_error "Invalid message content"
+      render_error message[:errors]
     end
   end
 
