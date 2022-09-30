@@ -4,8 +4,7 @@ class Api::V1::ApplicationController < ActionController::Base
 	before_action :doorkeeper_authorize!
 
 	def doorkeeper_unauthorized_render_options(error: nil)
-		# { json: { code: 401, error: "Unauthorized access" } }
-		render_error "Unauthorized access"
+		{ json: { errors: error.description } }
 	end
 
 	def check_logged_user
