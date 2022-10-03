@@ -1,16 +1,11 @@
 # app/channels/chat_channel.rb
 class NotifyChannel < ApplicationCable::Channel
   # ApplicationCable::Channel will work as Parent Cable Class like ApplicationController
-  before_subscribe :verify_subscriber
+  before_subscribe :callback_for_before_subscribe_channel
 
   def subscribed
     # Called when the consumer has successfully become a subscriber to this channel.
-    # p "---------- subscribed #{params.inspect}"
-    if @validRoom==@requestRoom
-      stream_from @validRoom
-    else
-      reject
-    end
+    stream_from current_user_room
   end
 
   def unsubscribed
@@ -18,25 +13,25 @@ class NotifyChannel < ApplicationCable::Channel
   end
 
   def receive(data)
-    # Here, data will be receive from Client when 
-    # Client will send data on this channel
-    # now below rebroadcast the message on the channel
-    # p "valid room"
-    # p @validRoom
-    # p @requestRoom
-    # msg = {
-    #   msg: "Sending testing message in reply",
-    #   room: @validRoom
-    # }
+    p "================================="
+    p data
+    # When client will broadcast something on this channel, request will receive here
+    # From here we will broadcast client's message to all subscribers, below we are 
+    # rebroadcasting the message (received from client) on the channel
+    msg = {
+      msg: data
+    }
 
-    # ActionCable.server.broadcast @validRoom, {
-    #   message: msg
-    # }
+    ActionCable.server.broadcast current_user_room, {
+      message: msg
+    }
   end
 
-  def verify_subscriber
-    # from payload
-    @validRoom = "notify_#{user["id"]}"
-    @requestRoom = "notify_#{params[:room_id]}"
+  def callback_for_before_subscribe_channel
+    # reject unless current_user
+  end
+
+  def current_user_room
+    "notify_#{current_user["id"]}"
   end
 end
