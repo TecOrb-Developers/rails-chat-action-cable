@@ -13,8 +13,6 @@ class NotifyChannel < ApplicationCable::Channel
   end
 
   def receive(data)
-    p "================================="
-    p data
     # When client will broadcast something on this channel, request will receive here
     # From here we will broadcast client's message to all subscribers, below we are 
     # rebroadcasting the message (received from client) on the channel
