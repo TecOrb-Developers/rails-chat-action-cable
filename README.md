@@ -104,13 +104,29 @@ https://github.com/TecOrb-Developers/rails-doorkeeper-auth
 We have improved above module for the registration process and session management in this repo. You can go thorugh with the commits to get more details.
 
 #### Must go through major gems used in this project
-- gem 'mysql2', '~> 0.5' # For databse
-- gem 'doorkeeper-jwt' # For authentication
-- gem 'bcrypt', '~> 3.1.7' # For authentication
-- gem 'will_paginate', '~> 3.1.0' # For paginate active records
-- gem 'redis', '~> 4.0' # For caching database
-- gem 'sidekiq', '~> 6.4.0' # For background processing (job scheduler)
-- gem 'active_model_serializers' # For preparing object-oriented JSON responses.
+Here are some of the major gems we have used in this project also we must go through for future uses.
+##### Database
+- gem 'mysql2', '~> 0.5' # For databse. Here is the [link](https://github.com/brianmario/mysql2)
+
+##### Athentication
+- gem 'doorkeeper-jwt' # For authentication. Here is the [link](https://github.com/doorkeeper-gem/doorkeeper-jwt)
+- gem 'bcrypt', '~> 3.1.7' # For authentication. Here is the [link](https://github.com/bcrypt-ruby/bcrypt-ruby)
+
+##### Manage data and views
+- gem 'will_paginate', '~> 3.1.0' # For paginate active records. Here is the [link](https://github.com/mislav/will_paginate)
+- gem 'active_model_serializers' # For preparing object-oriented JSON responses. Here is the [link](https://github.com/rails-api/active_model_serializers)
+- gem 'draper' # For using model decorators. Here is the [link](https://github.com/drapergem/draper)
+
+##### Manage background/scheduled jobs
+- gem 'redis', '~> 4.0' # For caching database. Here is the [link](https://github.com/redis/redis-rb)
+- gem 'sidekiq', '~> 6.4.0' # For background processing (job scheduler). Here is the [link](https://github.com/mperham/sidekiq)
+
+##### Testing
+- gem 'rspec-rails', '~> 6.0.0' Here is the [link](https://github.com/rspec/rspec-rails)
+- gem "factory_bot_rails" Here is the [link1](https://github.com/thoughtbot/factory_bot), [link2](https://rubygems.org/gems/factory_bot_rails/versions/6.1.0)
+
+For better use of `gem 'factory_bot_rails'` here is the [detailed documentation](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md) about installation, configurations and uses.
+
 
 ## Action Cable Channel
 User need to subscribe a chat channel to get notify through action cable. Action Cable url will be send by server where the application is hosted followed by the /cable path. Channel name is initiated by a prefix 'notify_' and user's id. 
