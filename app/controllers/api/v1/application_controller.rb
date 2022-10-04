@@ -1,16 +1,15 @@
 class Api::V1::ApplicationController < ActionController::Base
 	skip_before_action :verify_authenticity_token
 	include Api::V1::ApplicationHelper
-	include ResponseJson
 	before_action :doorkeeper_authorize!
 
 	def doorkeeper_unauthorized_render_options(error: nil)
-		{ json: { code: 401, error: "Unauthorized access" } }
+		{ json: { errors: error.description } }
 	end
 
 	def check_logged_user
 		unless current_user
-			build_response_view("unauthorized", nil, {})
+			render_error "Unauthorized access"
 		end
 	end
 

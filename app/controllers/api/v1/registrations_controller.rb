@@ -4,9 +4,9 @@ class Api::V1::RegistrationsController < Api::V1::ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			build_response_view("custom_ok","Signup successful",{user: @user, status: :created}) 
+			render json: @user.decorate, serializer: UserSerializer
 		else
-			build_response_view("custom","Signup failed",{errors: @user.errors.full_messages, status: :unprocessable_entity})
+			render_error @user.errors.full_messages
 		end  
 	end
 
