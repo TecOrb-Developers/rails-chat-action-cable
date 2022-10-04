@@ -39,3 +39,13 @@ Above will generate a spec file for the given controller as mentioned below
       create  spec/requests/api/v1/registrations_spec.rb
 
 5. Now we are ready to write tests
+
+6. Run specs tests
+
+Run specific spec file: 
+
+`rspec spec/requests/api/v1/registrations_spec.rb`
+
+Run all specs:
+
+`rspec`
