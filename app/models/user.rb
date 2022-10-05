@@ -3,6 +3,7 @@ class User < ApplicationRecord
 	
 	validates :country_code, presence: true
 	validates :mobile_number, presence: true, uniqueness: { scope: :country_code }
+	validates :email, presence: true
 	validates_uniqueness_of :email,:allow_blank => false, :allow_nil => false, case_sensitive: false
 
 	has_many :access_grants,

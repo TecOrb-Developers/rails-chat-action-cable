@@ -133,10 +133,41 @@ User need to subscribe a chat channel to get notify through action cable. Action
 To subscribe a channel user need to send their access token in 'session_token' key at the time of subscription request. Once user will be authenticated successfully, server will allow to subscribe the requested channel for the client.
 
 ## Module wise documentation is attached in below links:
+
+### Complete documentation
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation
+
+#### Project Setup
+
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/1.setup.md
+
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/2.environment_variable.md
+
+#### Environment variables setup
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/3.action_cable_codes.md
+
+#### APIs List
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/4.APIs_doc.md
+
+#### Postman collection file (To import and check APIs requests and responses)
+
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/Chat-Module.postman_collection.json
 
+### Technical documentation
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/decorators.md
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/serializers.md
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/validators.md
+
+### Rspec Tests documentation
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec/setup.md
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec/running_specs.md
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec/factory_bot.md
