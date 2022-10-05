@@ -100,8 +100,14 @@ gem 'doorkeeper'
 gem 'doorkeeper-jwt'
 ```
 We need to configure Doorkeeper as we already did in another sample
-https://github.com/TecOrb-Developers/rails-doorkeeper-auth
+- https://github.com/TecOrb-Developers/rails-doorkeeper-auth
+
 We have improved above module for the registration process and session management in this repo. You can go thorugh with the commits to get more details.
+
+You can check detailed documentation on configurations from below links:
+- Setup - https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/setup.md
+- Auths APIs - https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/auths.md
+
 
 #### Must go through major gems used in this project
 Here are some of the major gems we have used in this project also we must go through for future uses.
@@ -135,6 +141,7 @@ To subscribe a channel user need to send their access token in 'session_token' k
 ## Module wise documentation is attached in below links:
 
 ### Complete documentation
+
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation
 
 #### Project Setup
@@ -144,9 +151,11 @@ To subscribe a channel user need to send their access token in 'session_token' k
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/2.environment_variable.md
 
 #### Environment variables setup
+
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/3.action_cable_codes.md
 
 #### APIs List
+
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/4.APIs_doc.md
 
 #### Postman collection file (To import and check APIs requests and responses)
@@ -154,6 +163,7 @@ To subscribe a channel user need to send their access token in 'session_token' k
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/Chat-Module.postman_collection.json
 
 ### Technical documentation
+
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical
 
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/decorators.md
@@ -161,6 +171,12 @@ To subscribe a channel user need to send their access token in 'session_token' k
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/serializers.md
 
 - https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/validators.md
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/setup.md
+
+- https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/auths.md
 
 ### Rspec Tests documentation
 
