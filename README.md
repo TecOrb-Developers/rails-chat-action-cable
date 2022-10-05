@@ -105,8 +105,8 @@ We need to configure Doorkeeper as we already did in another sample
 We have improved above module for the registration process and session management in this repo. You can go thorugh with the commits to get more details.
 
 You can check detailed documentation on configurations from below links:
-- Setup - https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/setup.md
-- Auths APIs - https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/auths.md
+- [Setup](https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/setup.md)
+- [Auths APIs](https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/auths.md)
 
 
 #### Must go through major gems used in this project
@@ -146,44 +146,49 @@ To subscribe a channel user need to send their access token in 'session_token' k
 
 #### Project Setup
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/1.setup.md
+- [Base setup](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/1.setup.md)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/2.environment_variable.md
+- [Environment variables setup](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/2.environment_variable.md)
 
-#### Environment variables setup
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/3.action_cable_codes.md
+#### APIs list & Action cable notifications
 
-#### APIs List
+- [Available APIs](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/4.APIs_doc.md)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/4.APIs_doc.md
+- [Action cable notifications codes](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/3.action_cable_codes.md)
 
-#### Postman collection file (To import and check APIs requests and responses)
+#### Postman collection file (JSON file)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/Chat-Module.postman_collection.json
+- [Postman collection JSON file to import and check APIs requests and responses](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/Chat-Module.postman_collection.json)
 
 ### Technical documentation
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical
+- [Check list](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/decorators.md
+- [Decorators](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/decorators.md)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/serializers.md
+- [Serializers](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/serializers.md)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/validators.md
+- [Validators](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/validators.md)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper
+- [Doorkeeper check list](https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/setup.md
+- [Doorkeeper base setup](https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/setup.md)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/auths.md
+- [Doorkeeper auths APIs](https://github.com/TecOrb-Developers/rails-chat-action-cable/tree/main/documentation/technical/doorkeeper/auths.md)
 
 ### Rspec Tests documentation
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec
+- [Rspec tests](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec/setup.md
+- [Rspec setup](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec/setup.md)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec/running_specs.md
+- [How to run specs?](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec/running_specs.md)
 
-- https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec/factory_bot.md
+- [Using factories](https://github.com/TecOrb-Developers/rails-chat-action-cable/blob/main/documentation/technical/rspec/factory_bot.md)
+
+- [Using mocks](https://github.com/TecOrb-Developers/handbook/blob/main/rails/testing/mock.md)
+
+- [Using stubs](https://github.com/TecOrb-Developers/handbook/blob/main/rails/testing/stub.md)
+
+- [Explore more on Rspec](https://github.com/TecOrb-Developers/handbook/blob/main/rails/testing/rspec.md)
