@@ -32,7 +32,6 @@ gem 'sidekiq', '~> 6.4.0'
 gem 'active_model_serializers'
 gem 'draper'
 
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
