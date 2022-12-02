@@ -1,0 +1,2136 @@
+{
+	"info": {
+		"_postman_id": "40926c3b-26e5-4208-9e34-0eada1f5ac63",
+		"name": "Chat-Module",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6521205"
+	},
+	"item": [
+		{
+			"name": "chats",
+			"item": [
+				{
+					"name": "messages",
+					"item": [
+						{
+							"name": "Send Message",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{chat_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "receiver_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "Call me back when online",
+											"description": "For text message only",
+											"type": "text"
+										},
+										{
+											"key": "doc_type",
+											"value": "",
+											"description": "For other messages only: \"image\", \"document\"",
+											"type": "text"
+										},
+										{
+											"key": "doc_url",
+											"value": "",
+											"description": "Uploaded document URL link (URL)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/create",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Send Message",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Timezone",
+												"value": "Asia/Kolkata"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{chat_access_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "receiver_id",
+													"value": "5",
+													"type": "text"
+												},
+												{
+													"key": "message",
+													"value": "Call me back when online",
+													"description": "For text message only",
+													"type": "text"
+												},
+												{
+													"key": "doc_type",
+													"value": "",
+													"description": "For other messages only: \"image\", \"document\"",
+													"type": "text"
+												},
+												{
+													"key": "doc_url",
+													"value": "",
+													"description": "Uploaded document URL link (URL)",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{carRent}}/v1/chats/messages/create",
+											"host": [
+												"{{carRent}}"
+											],
+											"path": [
+												"v1",
+												"chats",
+												"messages",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, private, max-age=0"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "c4628858-8b56-461b-9fdd-0c3f9d883455"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.351572"
+										},
+										{
+											"key": "X-MiniProfiler-Original-Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-MiniProfiler-Ids",
+											"value": "eo9jsu5rircvkeyjst2o,dw34ca23ni0icq8bzj0d,p4uixozo8l3aamhmi817,w0r16bufwxfs2jl9wvp8,m492i893r06sxl7gvss2,7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev,4oean03dl776nt0j4ecx,swp1vzvx4ne8csoqh5tl,xnpsmfrrriuqsa5m2be,dwzcbqgzmmzog2q88qb8"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"chat_message\": {\n        \"id\": 24,\n        \"content\": \"Call me back when online\",\n        \"doc_url\": \"\",\n        \"doc_type\": \"\",\n        \"deleted\": false,\n        \"all_seen\": false,\n        \"latitude\": null,\n        \"longitude\": null,\n        \"created_at\": \"2022-10-06T11:41:47.066Z\",\n        \"sender\": {\n            \"id\": 1,\n            \"full_name\": \"Jai Rajput\",\n            \"contact_number\": \"+91 7834821711\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Messages list",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{chat_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n    \"page\": 1,\n    \"per_page\": 50\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/index",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"index"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Messages list",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Timezone",
+												"value": "Asia/Kolkata"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{chat_access_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"chat_id\": 1,\n    \"page\": 1,\n    \"per_page\": 50\n}"
+										},
+										"url": {
+											"raw": "{{carRent}}/v1/chats/messages/index",
+											"host": [
+												"{{carRent}}"
+											],
+											"path": [
+												"v1",
+												"chats",
+												"messages",
+												"index"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, private, max-age=0"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "ba3d7ba2-1e13-4f61-8f19-11998db0f7d5"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.057674"
+										},
+										{
+											"key": "X-MiniProfiler-Original-Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-MiniProfiler-Ids",
+											"value": "ab28296msdjhhigfa3im,eo9jsu5rircvkeyjst2o,dw34ca23ni0icq8bzj0d,p4uixozo8l3aamhmi817,w0r16bufwxfs2jl9wvp8,m492i893r06sxl7gvss2,7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev,4oean03dl776nt0j4ecx,swp1vzvx4ne8csoqh5tl,xnpsmfrrriuqsa5m2be"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"chat_messages\": [\n        {\n            \"id\": 13,\n            \"content\": \"Call me back when online.\",\n            \"doc_url\": \"\",\n            \"doc_type\": \"\",\n            \"deleted\": false,\n            \"all_seen\": false,\n            \"latitude\": null,\n            \"longitude\": null,\n            \"created_at\": \"2022-08-30T12:13:32.976Z\",\n            \"sender\": {\n                \"id\": 1,\n                \"full_name\": \"Jai Rajput\",\n                \"contact_number\": \"+91 7834821711\"\n            }\n        },\n        {\n            \"id\": 8,\n            \"content\": \"Hello are you there?\",\n            \"doc_url\": \"\",\n            \"doc_type\": \"\",\n            \"deleted\": true,\n            \"all_seen\": false,\n            \"latitude\": null,\n            \"longitude\": null,\n            \"created_at\": \"2022-08-30T11:30:07.899Z\",\n            \"sender\": {\n                \"id\": 1,\n                \"full_name\": \"Jai Rajput\",\n                \"contact_number\": \"+91 7834821711\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"content\": \"Hello are you there?\",\n            \"doc_url\": \"\",\n            \"doc_type\": \"\",\n            \"deleted\": false,\n            \"all_seen\": false,\n            \"latitude\": null,\n            \"longitude\": null,\n            \"created_at\": \"2022-08-30T11:28:22.227Z\",\n            \"sender\": {\n                \"id\": 1,\n                \"full_name\": \"Jai Rajput\",\n                \"contact_number\": \"+91 7834821711\"\n            }\n        },\n        {\n            \"id\": 6,\n            \"content\": \"Hello are you there?\",\n            \"doc_url\": \"\",\n            \"doc_type\": \"\",\n            \"deleted\": false,\n            \"all_seen\": false,\n            \"latitude\": null,\n            \"longitude\": null,\n            \"created_at\": \"2022-08-30T11:27:26.519Z\",\n            \"sender\": {\n                \"id\": 1,\n                \"full_name\": \"Jai Rajput\",\n                \"contact_number\": \"+91 7834821711\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"content\": \"Hello How are you?\",\n            \"doc_url\": null,\n            \"doc_type\": null,\n            \"deleted\": false,\n            \"all_seen\": false,\n            \"latitude\": null,\n            \"longitude\": null,\n            \"created_at\": \"2022-08-29T12:30:05.866Z\",\n            \"sender\": {\n                \"id\": 1,\n                \"full_name\": \"Jai Rajput\",\n                \"contact_number\": \"+91 7834821711\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"content\": \"Hello How are you?\",\n            \"doc_url\": null,\n            \"doc_type\": null,\n            \"deleted\": false,\n            \"all_seen\": false,\n            \"latitude\": null,\n            \"longitude\": null,\n            \"created_at\": \"2022-08-29T12:28:45.030Z\",\n            \"sender\": {\n                \"id\": 1,\n                \"full_name\": \"Jai Rajput\",\n                \"contact_number\": \"+91 7834821711\"\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Remove Messages",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{chat_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n    \"message_ids\": [22]\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/remove",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"remove"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Remove Messages",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Timezone",
+												"value": "Asia/Kolkata"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{chat_access_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"chat_id\": 1,\n    \"message_ids\": [22]\n}"
+										},
+										"url": {
+											"raw": "{{carRent}}/v1/chats/messages/remove",
+											"host": [
+												"{{carRent}}"
+											],
+											"path": [
+												"v1",
+												"chats",
+												"messages",
+												"remove"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, private, max-age=0"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "421e6305-91d5-4991-934d-410847550452"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.045998"
+										},
+										{
+											"key": "X-MiniProfiler-Original-Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-MiniProfiler-Ids",
+											"value": "6rgc8wxbs3aefq3knf40,ab28296msdjhhigfa3im,eo9jsu5rircvkeyjst2o,dw34ca23ni0icq8bzj0d,p4uixozo8l3aamhmi817,w0r16bufwxfs2jl9wvp8,m492i893r06sxl7gvss2,7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev,4oean03dl776nt0j4ecx,swp1vzvx4ne8csoqh5tl"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Unsend Messages (Remove from all)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{chat_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n    \"message_ids\": [22]\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/unsend",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"unsend"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unsend Messages (Remove from all)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Timezone",
+												"value": "Asia/Kolkata"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{chat_access_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"chat_id\": 1,\n    \"message_ids\": [22]\n}"
+										},
+										"url": {
+											"raw": "{{carRent}}/v1/chats/messages/unsend",
+											"host": [
+												"{{carRent}}"
+											],
+											"path": [
+												"v1",
+												"chats",
+												"messages",
+												"unsend"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, private, max-age=0"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "72fc7856-4bbb-475c-bbf7-76e5e8dfff90"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.103975"
+										},
+										{
+											"key": "X-MiniProfiler-Original-Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-MiniProfiler-Ids",
+											"value": "o6svn23tqhghlne8c7fw,6rgc8wxbs3aefq3knf40,ab28296msdjhhigfa3im,eo9jsu5rircvkeyjst2o,dw34ca23ni0icq8bzj0d,p4uixozo8l3aamhmi817,w0r16bufwxfs2jl9wvp8,m492i893r06sxl7gvss2,7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev,4oean03dl776nt0j4ecx"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Seen Message",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{chat_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n    \"message_id\": 4\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/seen",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"seen"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Seen Message",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Timezone",
+												"value": "Asia/Kolkata"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{chat_access_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"chat_id\": 1,\n    \"message_id\": 4\n}"
+										},
+										"url": {
+											"raw": "{{carRent}}/v1/chats/messages/seen",
+											"host": [
+												"{{carRent}}"
+											],
+											"path": [
+												"v1",
+												"chats",
+												"messages",
+												"seen"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, private, max-age=0"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "3afaa898-098e-4c19-8cf3-f86b0979671d"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.017192"
+										},
+										{
+											"key": "X-MiniProfiler-Original-Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-MiniProfiler-Ids",
+											"value": "ayda6jm46l7sg14ud0xm,o6svn23tqhghlne8c7fw,6rgc8wxbs3aefq3knf40,ab28296msdjhhigfa3im,eo9jsu5rircvkeyjst2o,dw34ca23ni0icq8bzj0d,p4uixozo8l3aamhmi817,w0r16bufwxfs2jl9wvp8,m492i893r06sxl7gvss2,7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"chat_message\": {\n        \"id\": 4,\n        \"content\": \"Hello How are you?\",\n        \"doc_url\": null,\n        \"doc_type\": null,\n        \"deleted\": false,\n        \"all_seen\": false,\n        \"latitude\": null,\n        \"longitude\": null,\n        \"created_at\": \"2022-08-29T12:28:45.030Z\",\n        \"sender\": {\n            \"id\": 1,\n            \"full_name\": \"Jai Rajput\",\n            \"contact_number\": \"+91 7834821711\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "deliver Message",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{chat_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"chat_id\": 1,\n    \"message_id\": 4\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/messages/deliver",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"messages",
+										"deliver"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "deliver Message",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Timezone",
+												"value": "Asia/Kolkata"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{chat_access_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"chat_id\": 1,\n    \"message_id\": 4\n}"
+										},
+										"url": {
+											"raw": "{{carRent}}/v1/chats/messages/deliver",
+											"host": [
+												"{{carRent}}"
+											],
+											"path": [
+												"v1",
+												"chats",
+												"messages",
+												"deliver"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, private, max-age=0"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "98adec09-8b8d-4d49-ba99-47e450eae9d4"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.053023"
+										},
+										{
+											"key": "X-MiniProfiler-Original-Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-MiniProfiler-Ids",
+											"value": "pa09ddlhdzpk57vj2zyq,ayda6jm46l7sg14ud0xm,o6svn23tqhghlne8c7fw,6rgc8wxbs3aefq3knf40,ab28296msdjhhigfa3im,eo9jsu5rircvkeyjst2o,dw34ca23ni0icq8bzj0d,p4uixozo8l3aamhmi817,w0r16bufwxfs2jl9wvp8,m492i893r06sxl7gvss2,7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"chat_message\": {\n        \"id\": 4,\n        \"content\": \"Hello How are you?\",\n        \"doc_url\": null,\n        \"doc_type\": null,\n        \"deleted\": false,\n        \"all_seen\": false,\n        \"latitude\": null,\n        \"longitude\": null,\n        \"created_at\": \"2022-08-29T12:28:45.030Z\",\n        \"sender\": {\n            \"id\": 1,\n            \"full_name\": \"Jai Rajput\",\n            \"contact_number\": \"+91 7834821711\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Conversations List",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Timezone",
+								"value": "Asia/Kolkata"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{chat_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"page\": \"1\",\n     \"per_page\": \"10\"\n}"
+						},
+						"url": {
+							"raw": "{{carRent}}v1/chats/index",
+							"host": [
+								"{{carRent}}v1"
+							],
+							"path": [
+								"chats",
+								"index"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Conversations List",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{chat_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"page\": \"1\",\n     \"per_page\": \"10\"\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}v1/chats/index",
+									"host": [
+										"{{carRent}}v1"
+									],
+									"path": [
+										"chats",
+										"index"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "eb3ffed9-9b19-4271-b29c-40b967e897b1"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.136671"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "v298liye18ruhdz1ycds,pa09ddlhdzpk57vj2zyq,ayda6jm46l7sg14ud0xm,o6svn23tqhghlne8c7fw,6rgc8wxbs3aefq3knf40,ab28296msdjhhigfa3im,eo9jsu5rircvkeyjst2o,dw34ca23ni0icq8bzj0d,p4uixozo8l3aamhmi817,w0r16bufwxfs2jl9wvp8,m492i893r06sxl7gvss2,7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"chats\": [\n        {\n            \"id\": 4,\n            \"title\": \"single\",\n            \"updated_at\": \"2022-10-06T11:41:47.066Z\",\n            \"recent_message\": {\n                \"id\": 24,\n                \"content\": \"Call me back when online\",\n                \"doc_url\": \"\",\n                \"doc_type\": \"\",\n                \"deleted\": false,\n                \"all_seen\": false,\n                \"latitude\": null,\n                \"longitude\": null,\n                \"created_at\": \"2022-10-06T11:41:47.066Z\",\n                \"sender\": {\n                    \"id\": 1,\n                    \"full_name\": \"Jai Rajput\",\n                    \"contact_number\": \"+91 7834821711\"\n                }\n            },\n            \"members\": [\n                {\n                    \"id\": 1,\n                    \"full_name\": \"Jai Rajput\",\n                    \"contact_number\": \"+91 7834821711\"\n                },\n                {\n                    \"id\": 5,\n                    \"full_name\": \"Jai Rajput\",\n                    \"contact_number\": \"+91 7834821712\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"title\": \"single\",\n            \"updated_at\": \"2022-09-29T14:00:52.559Z\",\n            \"recent_message\": {\n                \"id\": 22,\n                \"content\": \"Call me back when online\",\n                \"doc_url\": \"\",\n                \"doc_type\": \"\",\n                \"deleted\": false,\n                \"all_seen\": false,\n                \"latitude\": null,\n                \"longitude\": null,\n                \"created_at\": \"2022-09-29T14:00:52.559Z\",\n                \"sender\": {\n                    \"id\": 1,\n                    \"full_name\": \"Jai Rajput\",\n                    \"contact_number\": \"+91 7834821711\"\n                }\n            },\n            \"members\": [\n                {\n                    \"id\": 1,\n                    \"full_name\": \"Jai Rajput\",\n                    \"contact_number\": \"+91 7834821711\"\n                },\n                {\n                    \"id\": 4,\n                    \"full_name\": \"Sunny Chauhan\",\n                    \"contact_number\": \"+91 9910781150\"\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"title\": \"single\",\n            \"updated_at\": \"2022-08-30T12:13:32.976Z\",\n            \"recent_message\": {\n                \"id\": 13,\n                \"content\": \"Call me back when online.\",\n                \"doc_url\": \"\",\n                \"doc_type\": \"\",\n                \"deleted\": false,\n                \"all_seen\": false,\n                \"latitude\": null,\n                \"longitude\": null,\n                \"created_at\": \"2022-08-30T12:13:32.976Z\",\n                \"sender\": {\n                    \"id\": 1,\n                    \"full_name\": \"Jai Rajput\",\n                    \"contact_number\": \"+91 7834821711\"\n                }\n            },\n            \"members\": [\n                {\n                    \"id\": 1,\n                    \"full_name\": \"Jai Rajput\",\n                    \"contact_number\": \"+91 7834821711\"\n                },\n                {\n                    \"id\": 2,\n                    \"full_name\": \"Priya Chauhan\",\n                    \"contact_number\": \"+91 9910781147\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Conversations",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Timezone",
+								"value": "Asia/Kolkata"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{chat_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"chat_ids\": [2]\n}"
+						},
+						"url": {
+							"raw": "{{carRent}}/v1/chats/remove",
+							"host": [
+								"{{carRent}}"
+							],
+							"path": [
+								"v1",
+								"chats",
+								"remove"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove Conversations",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{chat_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"chat_ids\": [2]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/remove",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"remove"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "90d55eb1-a8ae-4a05-88e2-ba7b7e6b0b4a"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.018099"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "p4uixozo8l3aamhmi817,w0r16bufwxfs2jl9wvp8,m492i893r06sxl7gvss2,7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev,4oean03dl776nt0j4ecx,swp1vzvx4ne8csoqh5tl,xnpsmfrrriuqsa5m2be,dwzcbqgzmmzog2q88qb8,s193rfj4a670k3t2zmxy,mp48hb9kwtfyepg6sfkj"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Removed Chats list",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Timezone",
+								"value": "Asia/Kolkata"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{chat_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"page\": \"1\",\n     \"per_page\": \"10\"\n}"
+						},
+						"url": {
+							"raw": "{{carRent}}/v1/chats/removed",
+							"host": [
+								"{{carRent}}"
+							],
+							"path": [
+								"v1",
+								"chats",
+								"removed"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Removed Chats list",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Timezone",
+										"value": "Asia/Kolkata"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{chat_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"page\": \"1\",\n     \"per_page\": \"10\"\n}"
+								},
+								"url": {
+									"raw": "{{carRent}}/v1/chats/removed",
+									"host": [
+										"{{carRent}}"
+									],
+									"path": [
+										"v1",
+										"chats",
+										"removed"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "cb1df01d-71ab-4eee-a981-e504ca7975f7"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.099324"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "6z8x4w5j0b6sr7exg56t,v298liye18ruhdz1ycds,pa09ddlhdzpk57vj2zyq,ayda6jm46l7sg14ud0xm,o6svn23tqhghlne8c7fw,6rgc8wxbs3aefq3knf40,ab28296msdjhhigfa3im,eo9jsu5rircvkeyjst2o,dw34ca23ni0icq8bzj0d,p4uixozo8l3aamhmi817,w0r16bufwxfs2jl9wvp8,m492i893r06sxl7gvss2,7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"chats\": [\n        {\n            \"id\": 2,\n            \"title\": \"single\",\n            \"updated_at\": \"2022-08-30T11:58:48.535Z\",\n            \"recent_message\": {\n                \"id\": 11,\n                \"content\": \"Call me back when online.\",\n                \"doc_url\": \"\",\n                \"doc_type\": \"\",\n                \"deleted\": false,\n                \"all_seen\": false,\n                \"latitude\": null,\n                \"longitude\": null,\n                \"created_at\": \"2022-08-30T11:58:48.535Z\",\n                \"sender\": {\n                    \"id\": 1,\n                    \"full_name\": \"Jai Rajput\",\n                    \"contact_number\": \"+91 7834821711\"\n                }\n            },\n            \"members\": [\n                {\n                    \"id\": 1,\n                    \"full_name\": \"Jai Rajput\",\n                    \"contact_number\": \"+91 7834821711\"\n                },\n                {\n                    \"id\": 3,\n                    \"full_name\": \"Priya Chauhan\",\n                    \"contact_number\": \"+91 9910781149\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auths",
+			"item": [
+				{
+					"name": "Registrations",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{chat_client_basic_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@yesplus.com\",\n    \"password\": \"123456\",\n    \"fname\": \"Jai\",\n    \"lname\": \"Rajput\",\n    \"country_code\": \"+91\",\n    \"mobile_number\": \"7834821721\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bnpl}}/api/v1/registrations",
+							"host": [
+								"{{bnpl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registrations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Registrations",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{chat_client_basic_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test@yesplus.com\",\n    \"password\": \"123456\",\n    \"fname\": \"Jai\",\n    \"lname\": \"Rajput\",\n    \"country_code\": \"+91\",\n    \"mobile_number\": \"7834821721\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{bnpl}}/api/v1/registrations",
+									"host": [
+										"{{bnpl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registrations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "0408a349-e048-4f39-a300-05e16faa6a9f"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.248683"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "7dupd3eg6q40ms4if4hi,v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev,4oean03dl776nt0j4ecx,swp1vzvx4ne8csoqh5tl,xnpsmfrrriuqsa5m2be,dwzcbqgzmmzog2q88qb8,s193rfj4a670k3t2zmxy,mp48hb9kwtfyepg6sfkj,onwod8ovjc6bvvo3f4iu,38mm9d3ba0t8xh2nox91,nezwnjho1c1t2dcuys9z"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 6,\n        \"full_name\": \"Jai Rajput\",\n        \"contact_number\": \"+91 7834821721\",\n        \"joined_at\": \"October 2022\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{chat_client_basic_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"password\",\n    \"email\": \"jai@tecorb.co\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bnpl}}/oauth/token",
+							"host": [
+								"{{bnpl}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{chat_client_basic_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"grant_type\": \"password\",\n    \"email\": \"jai@tecorb.co\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{bnpl}}/oauth/token",
+									"host": [
+										"{{bnpl}}"
+									],
+									"path": [
+										"oauth",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "58939558-565c-48b9-a58f-01b46dbef1bb"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.277884"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev,4oean03dl776nt0j4ecx,swp1vzvx4ne8csoqh5tl,xnpsmfrrriuqsa5m2be,dwzcbqgzmmzog2q88qb8,s193rfj4a670k3t2zmxy,mp48hb9kwtfyepg6sfkj,onwod8ovjc6bvvo3f4iu,38mm9d3ba0t8xh2nox91,nezwnjho1c1t2dcuys9z,lrrkgq5qmjckic0xai8w,8foryz1sfq1c16z5iphn,g3wdvmcel49ioubz54a9"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjUwNTYxODQsImp0aSI6ImIxMzcwMmU4LTEwZjAtNGI0NS04ZWRmLTM1ODE3MmI5ZDdkMyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.O_r_EM-I73W5o8LJYwiCGjrXllPHEzzSedh6-xqhUibuYzHLQ9M0azNuuoSeHS9QL7I2u6IpRQmGfhrJfDA8_A\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 7199,\n    \"refresh_token\": \"S_B8gPKthWO5S7Iu6_cKq3VRim-niRrQD4Rx8MGyAKM\",\n    \"created_at\": 1665056184\n}"
+						}
+					]
+				},
+				{
+					"name": "Use Refresh token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{chat_client_basic_token}}",
+								"description": "Basic Base64(client_id:client_secret)",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"64Y7rzY-M1ePzLSNF5FaQf-8BHds07LMj-PZstaImQg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bnpl}}/oauth/token",
+							"host": [
+								"{{bnpl}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Use Refresh token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{chat_client_basic_token}}",
+										"description": "Basic Base64(client_id:client_secret)",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"64Y7rzY-M1ePzLSNF5FaQf-8BHds07LMj-PZstaImQg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{bnpl}}/oauth/token",
+									"host": [
+										"{{bnpl}}"
+									],
+									"path": [
+										"oauth",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "817c6607-1855-4f72-b350-18d533f95b56"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.067740"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev,4oean03dl776nt0j4ecx,swp1vzvx4ne8csoqh5tl,xnpsmfrrriuqsa5m2be,dwzcbqgzmmzog2q88qb8,s193rfj4a670k3t2zmxy,mp48hb9kwtfyepg6sfkj,onwod8ovjc6bvvo3f4iu,38mm9d3ba0t8xh2nox91,nezwnjho1c1t2dcuys9z,lrrkgq5qmjckic0xai8w,8foryz1sfq1c16z5iphn"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjUwNTYxODksImp0aSI6IjYwNWM1YzgxLTcyZGQtNDFlNi04NzZmLTM0NWUxYWRjZTU0MCIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.30gB1a0r57dCk5KX6aREE63iM4fs4kBNq837_CQSDmt-yKoP4yaZhbZHHiAkCweF-9w_2DGkPs0MnzdI65pVCQ\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 7199,\n    \"refresh_token\": \"2HVP86eHvFDCHAO00qxH5QoDVSkkFkXQd7NA3xmsCds\",\n    \"created_at\": 1665056189\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{chat_client_basic_token}}",
+								"description": "Basic Base64(client_id:client_secret)",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjQ5NjY3MTcsImp0aSI6IjQyMjhkNzE4LWMzYTQtNGI2My1hYjEwLTRhYWQxM2Q2NzFkZiIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.NqqCEoYC4E3D5xo3_VHQm_eW292jVQGFWM53MCozyk9XI8rErYE6dNxw0Ksai853X6hSLw9ujuapD2rX4XXaOQ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bnpl}}/oauth/revoke",
+							"host": [
+								"{{bnpl}}"
+							],
+							"path": [
+								"oauth",
+								"revoke"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{chat_client_basic_token}}",
+										"description": "Basic Base64(client_id:client_secret)",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2NjQ5NjY3MTcsImp0aSI6IjQyMjhkNzE4LWMzYTQtNGI2My1hYjEwLTRhYWQxM2Q2NzFkZiIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.NqqCEoYC4E3D5xo3_VHQm_eW292jVQGFWM53MCozyk9XI8rErYE6dNxw0Ksai853X6hSLw9ujuapD2rX4XXaOQ\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{bnpl}}/oauth/revoke",
+									"host": [
+										"{{bnpl}}"
+									],
+									"path": [
+										"oauth",
+										"revoke"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, private, max-age=0"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "54e5166e-4c98-4a49-89ec-9584afbf02fc"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.009632"
+								},
+								{
+									"key": "X-MiniProfiler-Original-Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-MiniProfiler-Ids",
+									"value": "v96oueavytgnxkfdfl7x,s44rc63kg2kfr8hhmvni,zj7n9xx8zbfmd1fzz40b,dw98w9u9mmqte7k736l4,6uh69uckwsw3gqebosht,ftzsrfnroauwxqc8d7ed,jebik5kyqnrim55bqq9d,nzl80sovw8m3lmop8vp,rnz97i1f9a014m37iyu0,hd5lh2ehslc515kvthev,4oean03dl776nt0j4ecx,swp1vzvx4ne8csoqh5tl,xnpsmfrrriuqsa5m2be,dwzcbqgzmmzog2q88qb8,s193rfj4a670k3t2zmxy,mp48hb9kwtfyepg6sfkj,onwod8ovjc6bvvo3f4iu,38mm9d3ba0t8xh2nox91,nezwnjho1c1t2dcuys9z,lrrkgq5qmjckic0xai8w"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "chat_client_basic_token",
+			"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJNeSBBcHAiLCJpYXQiOjE2MzgxOTI0MzYsImp0aSI6IjMxYjNiMjcwLTY4ZTAtNDlkZC05NWJmLTQ0MzU4MzEyMDk2NyIsInVzZXIiOnsiaWQiOjEsImVtYWlsIjoiamFpQHRlY29yYi5jbyJ9fQ.-HJkLys8CRx_IXudsFKuHxyoRNpm9cpOmwrgmOj7gzGxcDu02gLFB-jh3Pfa8dRPoTNMQ8CErMuvPl_s04Rw4A"
+		}
+	]
+}

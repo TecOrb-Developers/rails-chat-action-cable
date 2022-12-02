@@ -31,3 +31,20 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            fname: &repl 
+              on_number_detected: "should not include a number."
+            lname:
+              <<: *repl
+            email:
+              blacklisted_email: "is blacklisted, please check with support team."
+              blacklisted_domain: "is using a blacklisted domain, please choose a different email."
+        chat_message:
+          attributes:
+            content:
+              blacklisted_word: "includes blacklisted words which are not allowed on this application"
+            
