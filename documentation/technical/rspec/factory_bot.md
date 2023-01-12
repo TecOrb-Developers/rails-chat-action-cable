@@ -16,7 +16,9 @@ If you're using Rails, add the following configuration to
 
 ``
 RSpec.configure do |config|
+
   config.include FactoryBot::Syntax::Methods
+
 end
 ``
 
