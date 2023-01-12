@@ -14,13 +14,15 @@ Note: FactoryBot was previously named FactoryGirl
 If you're using Rails, add the following configuration to
 `spec/support/factory_bot.rb` 
 
-``
+`````
+
 RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 
 end
-``
+
+`````
 
 Require above file in `rails_helper.rb` file:
 
