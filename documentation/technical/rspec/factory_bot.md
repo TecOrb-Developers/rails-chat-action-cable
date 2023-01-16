@@ -12,8 +12,19 @@ Note: FactoryBot was previously named FactoryGirl
 #### RSpec
 
 If you're using Rails, add the following configuration to
-`spec/support/factory_bot.rb` and be sure to require that file in
-`rails_helper.rb`:
+`spec/support/factory_bot.rb` 
+
+`````
+
+RSpec.configure do |config|
+
+  config.include FactoryBot::Syntax::Methods
+
+end
+
+`````
+
+Require above file in `rails_helper.rb` file:
 
 `Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }`
 
